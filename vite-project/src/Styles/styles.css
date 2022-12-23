@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .gray {
   color: #918E9B;
 }
@@ -48,13 +52,26 @@ section h1 {
 /* END OF HERO */
 
 /* CARD */
-.cards--container {
+.card--carousel {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 0 2rem;
+}
+
+/* .cards--container {
   display: flex;
   justify-content: center;
   padding-block: 2rem;
-}
+} */
 
 .card1 {
+  min-width: 15rem;
+  max-width: 15rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -83,6 +100,10 @@ section h1 {
 .ratings img {
   width: 0.8rem;
   margin-right: 0.2rem;
+}
+
+.ratings p {
+  text-overflow: ellipsis;
 }
 
 .ratings span {

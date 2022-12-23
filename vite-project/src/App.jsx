@@ -2,21 +2,27 @@ import React from 'react'
 import NavBar from './Components/NavBar.jsx'
 import Hero from './Components/Hero.jsx'
 import Card from './Components/Card.jsx'
+import cardData from '../data'
 import '../src/Styles/styles.css'
 
 export default function App() {
+  const cards = cardData.map((card) => {
+    return (
+      <Card
+        key={card.id}
+        // item={item} 
+        {...card} //Spread operator
+      />
+    )
+  })
+
   return (
     <>
       <NavBar />
       <Hero />
-      <Card 
-        img="../src/assets/katie-zaferes.png"
-        rating="5.0"
-        reviewCount={6}
-        country="USA"
-        title="Life lessons with Katie Zaferes"
-        price={136}
-      />
+      <div className="card--carousel">
+        {cards}
+      </div>
     </>
   )
 }
